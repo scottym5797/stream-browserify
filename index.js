@@ -28,14 +28,10 @@ inherits(Stream, EE);
 Stream.Readable = require('readable-stream/lib/_stream_readable.js');
 Stream.Writable = require('readable-stream/lib/_stream_writable.js');
 Stream.Duplex = require('readable-stream/lib/_stream_duplex.js');
-inherits(Stream.Duplex, Stream.Readable);
-Stream.Transform = require('readable-stream/transform.js');
-inherits(Stream.Transform, Stream.Duplex);
-Stream.PassThrough = require('readable-stream/passthrough.js');
-inherits(Stream.PassThrough, Stream.Transform);
+Stream.Transform = require('readable-stream/lib/_stream_transform.js');
+Stream.PassThrough = require('readable-stream/lib/_stream_passthrough.js');
 Stream.finished = require('readable-stream/lib/internal/streams/end-of-stream.js')
 Stream.pipeline = require('readable-stream/lib/internal/streams/pipeline.js')
-
 
 // Backwards-compat with node 0.4.x
 Stream.Stream = Stream;
